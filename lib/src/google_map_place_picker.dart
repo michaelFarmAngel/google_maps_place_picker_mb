@@ -58,10 +58,12 @@ class GoogleMapPlacePicker extends StatelessWidget {
     this.zoomGesturesEnabled = true,
     this.zoomControlsEnabled = false,
     this.fullMotion = false,
+    this.zoom,
   }) : super(key: key);
 
   final LatLng initialTarget;
   final GlobalKey appBarKey;
+  final double? zoom;
 
   final SelectedPlaceWidgetBuilder? selectedPlaceWidgetBuilder;
   final PinBuilder? pinBuilder;
@@ -191,7 +193,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
 
   Widget _buildGoogleMapInner(PlaceProvider? provider, MapType mapType) {
     CameraPosition initialCameraPosition =
-        CameraPosition(target: this.initialTarget, zoom: 15);
+        CameraPosition(target: this.initialTarget, zoom: zoom ?? 11);
     return GoogleMap(
       zoomGesturesEnabled: this.zoomGesturesEnabled,
       zoomControlsEnabled:

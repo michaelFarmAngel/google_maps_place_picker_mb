@@ -77,6 +77,7 @@ class PlacePicker extends StatefulWidget {
     this.onMapTypeChanged,
     this.zoomGesturesEnabled = true,
     this.zoomControlsEnabled = false,
+    this.zoom,
   }) : super(key: key);
 
   final String apiKey;
@@ -231,6 +232,8 @@ class PlacePicker extends StatefulWidget {
 
   /// Allow user to make visible the zoom button
   final bool zoomControlsEnabled;
+
+  final double? zoom;
 
   @override
   _PlacePickerState createState() => _PlacePickerState();
@@ -435,7 +438,7 @@ class _PlacePickerState extends State<PlacePicker> {
       CameraUpdate.newCameraPosition(
         CameraPosition(
           target: LatLng(latitude, longitude),
-          zoom: 16,
+          zoom: widget.zoom ?? 16,
         ),
       ),
     );
