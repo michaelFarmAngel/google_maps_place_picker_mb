@@ -438,7 +438,7 @@ class _PlacePickerState extends State<PlacePicker> {
       CameraUpdate.newCameraPosition(
         CameraPosition(
           target: LatLng(latitude, longitude),
-          zoom: widget.zoom ?? 16,
+          zoom: 16,
         ),
       ),
     );
@@ -480,6 +480,7 @@ class _PlacePickerState extends State<PlacePicker> {
       hidePlaceDetailsWhenDraggingPin: widget.hidePlaceDetailsWhenDraggingPin,
       selectText: widget.selectText,
       outsideOfPickAreaText: widget.outsideOfPickAreaText,
+      zoom: widget.zoom,
       onToggleMapType: () {
         provider!.switchMapType();
         if (widget.onMapTypeChanged != null) {
