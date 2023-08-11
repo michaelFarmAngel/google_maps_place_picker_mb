@@ -480,7 +480,7 @@ class _PlacePickerState extends State<PlacePicker> {
       hidePlaceDetailsWhenDraggingPin: widget.hidePlaceDetailsWhenDraggingPin,
       selectText: widget.selectText,
       outsideOfPickAreaText: widget.outsideOfPickAreaText,
-      zoom: widget.zoom,
+      zoom: widget.zoom, // add zoom,
       onToggleMapType: () {
         provider!.switchMapType();
         if (widget.onMapTypeChanged != null) {
